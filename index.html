@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.lightoff {
+  height: 125px;
+  width: 125px;
+  background-color: rgb(88, 88, 88);
+  border-radius: 50%;
+  display: inline-block;
+}
+.lighton {
+  height: 125px;
+  width: 125px;
+  background-color: rgb(255, 230, 0);
+  border-radius: 50%;
+  display: inline-block;
+}
+.btnstyle {
+  
+  border: 2px solid red;
+  border-radius: 20px;
+  
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+p {
+  
+  font-size: 20px;
+  margin-top: 0px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
+</head>
+<body>
+
+
+<div>
+
+<div>
+    <label style="font-size: 50px; text-align: center;">Test for the clock hands distance</label><br>
+    <label>choose length of hourhand</label>
+    <input id="inhours" type="range" value="2" min="1" max="10"> 
+    <p id="slidervalhour"></p>
+
+    <label>choose length of minutehand</label>
+    <input id="inminutes" type="range" value="4" min="1" max="10"> 
+    <p id="slidervalmin"></p>
+
+    <label>choose length of secondhand</label>
+    <input id="inseconds" type="range" value="6" min="1" max="10"> <br>
+    <p id="slidervalsec"></p>
+    <!-- <button id="btn2" class="btnstyle" onclick="runAngleCheck()">runAngleCheck</button> -->
+</div>
+
+<div>
+    <button id ="btn1" class= "btnstyle" onclick="run12Hours()">Start Timer</button>
+</div>
+<br>
+<p id="timedisplay"></p>
+<br>
+<br><br>
+<div id="resultdiv">
+    <table style="width:90%;border: 1px solid black;">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>HourHand</th>
+                <th>MinuteHand</th>
+                <th>SecondHand</th>
+                <th>Equal distance length</th>
+            </tr>
+        </thead>
+        <tbody id="resultTbody"></tbody>
+    </table>
+</div>
+
+
+</div>
+
+<script src="scripts.js"></script>
+<script>
+var hrslider = document.getElementById("inhours");
+var hrval = document.getElementById("slidervalhour");
+hrval.innerHTML = hrslider.value;
+
+hrslider.oninput = function() {
+    hrval.innerHTML = this.value;
+}
+
+var minslider = document.getElementById("inminutes");
+var minval = document.getElementById("slidervalmin");
+minval.innerHTML = minslider.value;
+
+minslider.oninput = function() {
+    minval.innerHTML = this.value;
+}
+
+var secslider = document.getElementById("inseconds");
+var secval = document.getElementById("slidervalsec");
+secval.innerHTML = secslider.value;
+
+secslider.oninput = function() {
+    secval.innerHTML = this.value;
+}
+
+
+</script>
+
+</body>
+</html> 
